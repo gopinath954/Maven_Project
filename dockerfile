@@ -23,4 +23,4 @@ COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 # Expose port (default Tomcat port)
 EXPOSE 8080
 
-# Start Tomcat (default CMD already handles it)
+
