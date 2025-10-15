@@ -19,16 +19,15 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying WAR to Tomcat...'
-                sh '''
-                sudo systemctl stop tomcat
-                sudo cp target/*.war ${DEPLOY_DIR}/app.war
-                sudo systemctl start tomcat
-                '''
-            }
-        }
+        stage('Deploy to Tomcat') {
+    steps {
+        sh '''
+        sudo systemctl stop tomcat
+        sudo cp target/*.war /opt/tomcat/webapps/
+        sudo systemctl start tomcat
+        '''
+    }
+}
     }
 
     post {
