@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/yourusername/java-web-app.git'
+        GIT_REPO = 'https://github.com/gopinath954/Maven_Project.git'
         DEPLOY_DIR = '/opt/tomcat/webapps'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: "${GIT_REPO}"
+                git branch: 'master', url: "${GIT_REPO}"
             }
         }
 
